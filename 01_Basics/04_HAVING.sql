@@ -17,3 +17,22 @@ SELECT category_id, AVG(price) AS avg_price
 FROM Products
 GROUP BY category_id
 HAVING AVG(price) > 500;
+
+-- HAVING Clause Examples
+
+-- Count employees in each department
+SELECT department, COUNT(*) AS total_employees
+FROM Employees
+GROUP BY department;
+
+-- Departments with more than 5 employees
+SELECT department, COUNT(*) AS total_employees
+FROM Employees
+GROUP BY department
+HAVING COUNT(*) > 5;
+
+-- Average salary greater than 50000
+SELECT department, AVG(salary) AS avg_salary
+FROM Employees
+GROUP BY department
+HAVING AVG(salary) > 50000;
